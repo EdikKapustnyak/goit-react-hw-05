@@ -31,7 +31,7 @@ export default function MovieDetailsPage() {
   }, [movieId]);
 
   const handleGoBack = () => {
-    navigate(backLink);
+    navigate(backLink.current);
   };
 
   if (loading) return <Loader />;
