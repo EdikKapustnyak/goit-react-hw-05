@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   useParams,
   useNavigate,
@@ -20,7 +20,7 @@ export default function MovieDetailsPage() {
   const [error, setError] = useState(null);
 
   // Зберігаємо звідки прийшли (для Go back)
-  const backLink = location.state?.from || "/movies";
+  const backLink = useRef(location.state?.from || "/movies");
 
   useEffect(() => {
     setLoading(true);
